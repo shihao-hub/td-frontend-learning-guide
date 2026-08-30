@@ -226,10 +226,12 @@ pnpm 默认 `autoInstallPeers` 会自动补上，日常无感，看依赖树时�
 
 本仓库刻意**不用** workspace（平铺自治模式，见 AGENTS.md），学到 P3 时切到 creativault 仓库实践。
 
-## 6. 实战工具：学习进度报告器（main.ts）
+## 6. 实战工具：学习进度报告器（src/ 多模块）
 
 本目录用上面全部知识写了一个**真实工具**（对标 Python 的 main.py 习惯）：
 扫描各 playground README 的知识点清单 + `learning-guide/学习进度追踪.md` 的周计划打卡，一条命令看全景。
+
+代码按职责拆在 `src/` 下：`types.ts`（接口）、`parser.ts`（Markdown 解析）、`collector.ts`（扫描文件）、`render.ts`（彩条渲染）、`main.ts`（入口编排）。
 
 ```bash
 pnpm report                # 进度总览（彩条 + 百分比 + 总计，当前全仓 149 项）
@@ -258,7 +260,7 @@ esbuild 构建脚本放行见 4.5。
 | 2 | 分开装依赖 | `pnpm add -D typescript`、`pnpm add -D tsx`、`pnpm add chalk`、`pnpm add string-width` | package.json、pnpm-lock.yaml、node_modules 三处都有变化；能说清哪些该 `-D` 哪些不该 |
 | 3 | 看 store 结构 | `pnpm store path`；`Get-ChildItem node_modules\.pnpm` | 理解顶层 symlink 与 `.pnpm` 真实布局 |
 | 4 | 项目内执行 | `pnpm exec tsc --version` | 输出版本号，且全局没装 typescript 也能跑 |
-| 5 | scripts 入口 | `pnpm report`（scripts 里是 `tsx main.ts`） | 全仓库进度报告打出来 |
+| 5 | scripts 入口 | `pnpm report`（scripts 里是 `tsx src/main.ts`） | 全仓库进度报告打出来 |
 | 6 | 临时执行 | `pnpm dlx cowsay hello` | 有牛说话，且 node_modules 里没多出 cowsay |
 | 7 | 依赖侦查 | `pnpm list --depth 0` / `pnpm why chalk` / `pnpm why esbuild` | 能解释 chalk 和 esbuild 分别是怎么进来的 |
 | 8 | lockfile 恢复 | `Remove-Item -Recurse -Force node_modules` 后 `pnpm install` | ≈ `uv sync`：删了也能精确还原 |
