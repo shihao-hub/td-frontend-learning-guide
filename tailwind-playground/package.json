@@ -1,0 +1,15 @@
+{
+  "name": "tailwind-playground",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "check": "vite build"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.14",
+    "tailwindcss": "^4.0.14",
+    "vite": "^6.0.7"
+  }
+}

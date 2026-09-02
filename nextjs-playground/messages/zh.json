@@ -1,0 +1,16 @@
+{
+  "nav": { "home": "学习地图", "rsc": "RSC 边界", "data": "数据获取", "api": "API 调用", "action": "Server Action", "i18n": "国际化", "sse": "SSE 流" },
+  "home": {
+    "title": "nextjs-playground",
+    "subtitle": "P0 核心：把 RSC 与客户端组件的边界搞懂，「前端里的前后端」就通了",
+    "serverRenderedAt": "本页服务端渲染于 {time}（刷新会变；查看源代码能看到完整 HTML——这就是 SSR/RSC）"
+  },
+  "i18nDemo": {
+    "title": "国际化（next-intl）",
+    "desc": "这行文案来自 messages 语言包（按 locale 选择），locale 存在 cookie 里",
+    "current": "当前语言：中文",
+    "hint": "点 EN 切换后整页文案变化（HTML 重新服务端渲染）",
+    "items": "篮子里有 {count, plural, =0 {没有苹果} other {# 个苹果} }"
+  },
+  "localeSwitch": { "zh": "中文", "en": "EN" }
+}

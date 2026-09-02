@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* 自定义主题变量（Tailwind 4 用 CSS 变量配置，不再需要 tailwind.config.js 的内容） */
+@theme {
+  --color-brand: #0ea5e9;
+}

@@ -1,0 +1,30 @@
+{
+  // 学习仓库：JS/JSX 立即可用；TypeScript/TSX 条目零成本预置，打开 .ts/.tsx 文件时才会拉起 vtsls
+  "languages": {
+    "JavaScript": {
+      "enable_language_server": true,
+      "language_servers": ["vtsls"]
+    },
+    "TypeScript": {
+      "enable_language_server": true,
+      "language_servers": ["vtsls"]
+    },
+    "TSX": {
+      "enable_language_server": true,
+      "language_servers": ["vtsls"]
+    }
+  },
+  // tic-tac-toe 自带的 node_modules 足够解析 react 类型，禁止 tsserver 再从 npm 自动拉取类型包
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "javascript": {
+          "disableAutomaticTypeAcquisition": true
+        },
+        "typescript": {
+          "disableAutomaticTypeAcquisition": true
+        }
+      }
+    }
+  }
+}
